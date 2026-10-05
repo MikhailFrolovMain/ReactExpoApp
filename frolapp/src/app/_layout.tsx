@@ -1,8 +1,13 @@
+import { BebasNeue_400Regular, useFonts } from '@expo-google-fonts/bebas-neue';
 import { Slot, useRouter } from 'expo-router';
 import { useRef, useState } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
 export default function RootLayout() {
+
+  const [fontsLoaded] = useFonts({
+    BebasNeue_400Regular,
+  });
+
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +31,10 @@ export default function RootLayout() {
   const go = (path: any) => {
     router.push(path);
   };
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <View style={styles.container}>
@@ -102,7 +111,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center', 
     alignItems: 'center',     
     borderRadius: 30,
-    backgroundColor: '#446d16a2', 
+    backgroundColor: '#0000007d', 
   },
-  navTxt: { color: 'white', fontWeight: 'bold', fontSize: 18 }
+  navTxt: { color: 'white', fontSize: 18, fontFamily: 'BebasNeue_400Regular', }
 });
