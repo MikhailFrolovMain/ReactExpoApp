@@ -4,25 +4,25 @@ import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native
 
 export default function RootLayout() {
   const router = useRouter();
+
+  const [isOpen, setIsOpen] = useState(false);
   const anim = useRef(new Animated.Value(0)).current;
-  // pruzina
+
   const toggleMenu = () => {
-    const toVal = isOpen ? 0 : 1; 
-    
+    const toVal = isOpen ? 0 : 1;  
     Animated.spring(anim, {
       toValue: toVal,
       friction: 5, 
       useNativeDriver: true, 
     }).start();
     
-    setIsOpen(!isOpen); //reset
+    setIsOpen(!isOpen); 
   };
   
-  const fly1 = { transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [0, -180] }) }] };
-  const fly2 = { transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [0, -120] }) }] };
-  const fly3 = { transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [0, -60] }) }] };
+  const fly1 = { opacity: anim, transform: [{ translateX: anim.interpolate({ inputRange: [0, 1], outputRange: [0, -5] }) },{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [0, -120] }) }] };
+  const fly2 = { opacity: anim, transform: [{ translateX: anim.interpolate({ inputRange: [0, 1], outputRange: [0, -65] }) },{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [0, -65] }) }] };
+  const fly3 = { opacity: anim, transform: [{ translateX: anim.interpolate({ inputRange: [0, 1], outputRange: [0, -100] }) }] };
 
-  const [isOpen, setIsOpen] = useState(false);
   const go = (path: any) => {
     router.push(path);
   };
@@ -35,26 +35,30 @@ export default function RootLayout() {
       </View>
 
       <View style={styles.navBar}>
-        <Animated.View style={fly1}>
+        
+        <Animated.View style={[styles.miniWrap, fly1]}>
           <TouchableOpacity style={styles.navBtn} onPress={() => go('/')}>
-            <Text style={styles.navTxt}>1</Text>
+            <Text style={styles.navTxt}>Dom</Text>
           </TouchableOpacity>
         </Animated.View>
-        <Animated.View style={fly2}>
-          <TouchableOpacity style={styles.navBtn} onPress={() => go('/explore')}>
-            <Text style={styles.navTxt}>2</Text>
-          </TouchableOpacity>
-        </Animated.View>
-        <Animated.View style={fly3}>
-          <TouchableOpacity style={styles.navBtn} onPress={() => go('/about')}>
-            <Text style={styles.navTxt}>3</Text>
-          </TouchableOpacity>
-        </Animated.View>
-        <TouchableOpacity style={styles.navBtn1} onPress={toggleMenu}>
-            <Text style={styles.navTxt}>{isOpen ? 'X' : 'O'}</Text>
-        </TouchableOpacity>
-      </View>
 
+        <Animated.View style={[styles.miniWrap, fly2]}>
+          <TouchableOpacity style={styles.navBtn} onPress={() => go('/explore')}>
+            <Text style={styles.navTxt}>Podrobno</Text>
+          </TouchableOpacity>
+        </Animated.View>
+
+        <Animated.View style={[styles.miniWrap, fly3]}>
+          <TouchableOpacity style={styles.navBtn} onPress={() => go('/about')}>
+            <Text style={styles.navTxt}>O meni</Text>
+          </TouchableOpacity>
+        </Animated.View>
+        
+        <TouchableOpacity style={styles.navBtn1} onPress={toggleMenu} activeOpacity={0.8}>
+            <Text style={styles.navTxt}>{isOpen ? 'X' : '...'}</Text>
+        </TouchableOpacity>
+        
+      </View>
     </View>
   );
 }
@@ -64,26 +68,41 @@ const styles = StyleSheet.create({
   content: { flex: 1 },
   navBar: {
     position: 'absolute',
-    bottom: 15,
-    left: 15,
-    width: 50,
-    height: 50,
-    backgroundColor: '#446d16a2',
+    bottom: 30, 
+    right: 20,
+    width: 60,  
+    height: 60,
+    backgroundColor: '#446d1645',
     justifyContent: 'center',
+    alignItems: 'center', 
     borderRadius: 30,
-    alignItems: 'center'
+    zIndex: 10,
+  },
+ 
+  miniWrap: {
+    position: 'absolute',
+    width: 100,
+    height: 44,
+    backgroundColor: '#45454563', 
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   navBtn: {
-    padding: 0,
-    position: 'absolute',
+    flex: 1,
+    width: 80,  
+    height: 80,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   navBtn1: {
-    padding:5,
-    bottom: -10,
-    left: 15,
-    width: 50,
-    height: 50,
     position: 'absolute',
+    width: 60,
+    height: 60,
+    justifyContent: 'center', 
+    alignItems: 'center',     
+    borderRadius: 30,
+    backgroundColor: '#446d16a2', 
   },
-  navTxt: { color: 'black', fontWeight: 'bold' }
+  navTxt: { color: 'white', fontWeight: 'bold', fontSize: 18 }
 });
