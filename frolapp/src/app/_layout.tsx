@@ -3,8 +3,6 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function RootLayout() {
   const router = useRouter();
-
-  // funkciya perehoda
   const go = (path: any) => {
     router.push(path);
   };
@@ -18,15 +16,15 @@ export default function RootLayout() {
 
       <View style={styles.navBar}>
         <TouchableOpacity style={styles.navBtn} onPress={() => go('/')}>
-          <Text style={styles.navTxt}>Glavnaya</Text>
+          <Text style={styles.navTxt}>1</Text>
         </TouchableOpacity>
         
         <TouchableOpacity style={styles.navBtn} onPress={() => go('/explore')}>
-          <Text style={styles.navTxt}>Podrobnee</Text>
+          <Text style={styles.navTxt}>2</Text>
         </TouchableOpacity>
         
         <TouchableOpacity style={styles.navBtn} onPress={() => go('/about')}>
-          <Text style={styles.navTxt}>O sebe</Text>
+          <Text style={styles.navTxt}>3</Text>
         </TouchableOpacity>
       </View>
 
@@ -38,12 +36,19 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   content: { flex: 1 },
   navBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    backgroundColor: '#0984e3',
-    paddingVertical: 15,
-    paddingBottom: 30,
+    position: 'absolute',
+    bottom: 15,
+    left: 15,
+    width: 50,
+    height: 50,
+    backgroundColor: '#446d16a2',
+    justifyContent: 'center',
+    borderRadius: 30,
+    alignItems: 'center'
   },
-  navBtn: { padding: 10 },
+  navBtn: {
+    padding: 0,
+    position: 'absolute',
+  },
   navTxt: { color: 'white', fontWeight: 'bold' }
 });
