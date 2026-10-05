@@ -1,8 +1,8 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 export default function IndexScreen() {
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+    <View style={styles.container}>
       <Text style={styles.header}>Domača Stran</Text>
       
       <Image style={styles.photo} source={require('../../assets/images/photo_2026-10-05_23-59-50.jpg')} />
@@ -30,13 +30,7 @@ export default function IndexScreen() {
         </View>
       </View>
 
-      {/* Контейнер под 3D-модель */}
-      <View style={styles.modelContainer}>
-        <Text style={styles.modelPlaceholderText}>[ 3D MODEL PLACEHOLDER ]</Text>
-        {/* Сюда позже добавим Canvas и твою модельку */}
-      </View>
-
-    </ScrollView>
+    </View>
   );
 }
 
@@ -44,68 +38,49 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, 
     backgroundColor: '#f5f6fa', 
-  },
-  content: {
     padding: 20,
-    paddingBottom: 120, // Оставляем место снизу для нашего меню
+    justifyContent: 'center', // Центрируем контент красиво по вертикали экрана
   },
   header: {
     fontFamily: 'BebasNeue_400Regular',
     color: "#000000",
-    fontSize: 40,
-    marginTop: 20,
-    marginBottom: 10,
+    fontSize: 36,
+    marginBottom: 5,
   }, 
   photo: {
     width: '100%',
-    height: 250,
+    height: 180, // Сделали чуть компактнее, чтобы точно влезло без скролла
     borderRadius: 15,
-    marginBottom: 15,
+    marginBottom: 10,
   }, 
   text: {
     fontFamily: 'BebasNeue_400Regular',
     color: "#000000",
-    fontSize: 28,
-    marginBottom: 10,
+    fontSize: 24,
+    marginBottom: 8,
   },
   text1: {
     fontFamily: 'BebasNeue_400Regular',
     color: "#333",
-    fontSize: 22,
-    marginBottom: 10,
+    fontSize: 20,
+    marginBottom: 6,
   },
   listContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
   },
   listItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: 4,
   },
   bullet: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#446d16',
-    marginRight: 10,
+    marginRight: 8,
   },
   listText: {
     fontFamily: 'BebasNeue_400Regular',
-    fontSize: 20,
+    fontSize: 18,
     color: '#222',
   },
-  modelContainer: {
-    width: '100%',
-    height: 220,
-    backgroundColor: '#e2e8f0',
-    borderRadius: 15,
-    borderWidth: 2,
-    borderColor: '#446d16',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 10,
-  },
-  modelPlaceholderText: {
-    fontFamily: 'BebasNeue_400Regular',
-    fontSize: 18,
-    color: '#666',
-  }
 });
