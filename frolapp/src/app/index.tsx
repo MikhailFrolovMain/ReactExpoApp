@@ -1,32 +1,27 @@
-// dobavil Image i ScrollView
 import { Image, ScrollView, StyleSheet, Text } from 'react-native';
 
-export default function HomeScreen() {
+export default function IndexScreen() {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Fotografija</Text>
-      
-      {/* kartinka */}
-      <Image 
-        source={{ uri: '' }} 
-        style={styles.image} 
-      />
-      
-      <Text style={styles.desc}>
-        Eto prilozhenie pro moe lubimoe delo.
-      </Text>
+    <ScrollView style={styles.container}>
+      <Text>Domača Stran</Text>
+      <Image style={styles.photo} source={require('../../assets/images/photo_2026-10-05_23-59-50.jpg')} />
     </ScrollView>
+
+    
   );
 }
 
+
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     flex: 1, 
-    alignItems: 'center', 
-    backgroundColor: '#fff',
-    paddingTop: 50,
+    backgroundColor: '#f5f6fa', 
   },
-  title: { fontSize: 26, fontWeight: 'bold', marginBottom: 20 },
-  image: { width: '90%', height: 200, borderRadius: 10, marginBottom: 15 },
-  desc: { fontSize: 16, textAlign: 'center', paddingHorizontal: 20 },
+  photo: {
+    width: '90%',
+    left: 20,
+    bottom: -500,
+    height: 250,
+    borderRadius: 15,
+  }
 });
