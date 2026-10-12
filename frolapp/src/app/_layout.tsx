@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center', 
     alignItems: 'center',     
     borderRadius: 30,
-    backgroundColor: '#0000007d', 
+    backgroundColor: '#00ff1538', 
   },
   navTxt: { color: 'white', fontSize: 18, fontFamily: 'BebasNeue_400Regular', }
 });

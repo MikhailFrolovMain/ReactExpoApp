@@ -3,33 +3,28 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 export default function IndexScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Domača Stran</Text>
+      <Text style={styles.header}>Dom</Text>
       
+
       <Image style={styles.photo} source={require('../../assets/images/photo_2026-10-05_23-59-50.jpg')} />
       
-      <Text style={styles.text}>Mikhail Frolov, dijak 3.TRA</Text>
-      
+      <Text style={styles.text}>Mikhail Frolov,3.TRA</Text>
       <Text style={styles.text1}>Aplikacija predstavlja:</Text>
 
       <View style={styles.listContainer}>
         <View style={styles.listItem}>
-          <Text style={styles.bullet}>■</Text>
+          <Text style={styles.bullet}>*</Text>
           <Text style={styles.listText}>Mene</Text>
         </View>
         <View style={styles.listItem}>
-          <Text style={styles.bullet}>■</Text>
+          <Text style={styles.bullet}>*</Text>
           <Text style={styles.listText}>Moje programerske sposobnosti / izkušnje</Text>
         </View>
         <View style={styles.listItem}>
-          <Text style={styles.bullet}>■</Text>
-          <Text style={styles.listText}>Moje 3D modelerske sposobnosti / izkušnje</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text style={styles.bullet}>■</Text>
+          <Text style={styles.bullet}>*</Text>
           <Text style={styles.listText}>Moje zanimanje za fotografijo</Text>
         </View>
       </View>
-
     </View>
   );
 }
@@ -37,33 +32,35 @@ export default function IndexScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#f5f6fa', 
+    backgroundColor: '#121212', 
     padding: 20,
-    justifyContent: 'center', // Центрируем контент красиво по вертикали экрана
+    justifyContent: 'center', 
   },
   header: {
     fontFamily: 'BebasNeue_400Regular',
-    color: "#000000",
+    color: "#ffffff", // Белый текст для темной темы
     fontSize: 36,
     marginBottom: 5,
   }, 
   photo: {
     width: '100%',
-    height: 180, // Сделали чуть компактнее, чтобы точно влезло без скролла
+    height: 180, 
     borderRadius: 15,
     marginBottom: 10,
+    borderWidth: 2,
+    borderColor: '#446d16',
   }, 
   text: {
     fontFamily: 'BebasNeue_400Regular',
-    color: "#000000",
+    color: "#ffffff",
     fontSize: 24,
     marginBottom: 8,
   },
   text1: {
     fontFamily: 'BebasNeue_400Regular',
-    color: "#333",
+    color: "#aaaaaa",
     fontSize: 20,
-    marginBottom: 6,
+    marginBottom: 15,
   },
   listContainer: {
     marginBottom: 10,
@@ -71,16 +68,16 @@ const styles = StyleSheet.create({
   listItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 4,
+    marginBottom: 8,
   },
   bullet: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#446d16',
-    marginRight: 8,
+    marginRight: 10,
   },
   listText: {
     fontFamily: 'BebasNeue_400Regular',
-    fontSize: 18,
-    color: '#222',
+    fontSize: 20,
+    color: '#dddddd',
   },
 });
