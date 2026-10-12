@@ -13,20 +13,22 @@ export default function ExploreScreen() {
         showsHorizontalScrollIndicator={false} 
         style={styles.galleryContainer}
       >
+        {/* Добавлены правильные относительные пути ../../ */}
         <Image style={styles.galleryImage} source={require('../../assets/images/photo_2026-10-05_23-59-50.jpg')} />
-        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-27.jpg')} />
-        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-40.jpg')} />
-        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-42.jpg')} />
-        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-43.jpg')} />
-        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-45.jpg')} />
-        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-46.jpg')} />
-        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-48.jpg')} />
+        <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-27.jpg')} />
+        <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-40.jpg')} />
+        <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-42.jpg')} />
+        <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-43.jpg')} />
+        <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-45.jpg')} />
+        <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-46.jpg')} />
+        <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-48.jpg')} />
       </ScrollView>
 
       <Text style={styles.sectionTitle}>MOJE ORODJE</Text>
       <View style={styles.phoneBlock}>
         <View style={styles.phoneImagePlaceholder}>
-           <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-48.jpg')} />
+           {/* Применен новый стиль phoneImage, чтобы картинка вписалась в контейнер */}
+           <Image style={styles.phoneImage} source={require('../../assets/images/photoes/image.png')} />
         </View>
         <Text style={styles.phoneTitle}>NOTHING PHONE 2a</Text>
         <Text style={styles.phoneDesc}>
@@ -84,12 +86,18 @@ const styles = StyleSheet.create({
   },
   phoneImagePlaceholder: {
     width: '100%',
-    height: 200,
+    height: 200, // Высота блока под телефон
     backgroundColor: '#2a2a2a',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 15,
+    overflow: 'hidden', // Чтобы картинка не вылезала за скругленные края
+  },
+  phoneImage: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover', // Картинка красиво заполнит блок, не растягиваясь
   },
   phoneTitle: {
     fontFamily: 'BebasNeue_400Regular',
@@ -98,7 +106,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   phoneDesc: {
-    fontFamily: 'System', // Обычный шрифт для читаемости
+    fontFamily: 'System', 
     color: '#ccc',
     fontSize: 16,
     lineHeight: 24,

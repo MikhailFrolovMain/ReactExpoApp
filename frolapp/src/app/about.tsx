@@ -6,7 +6,7 @@ export default function AboutScreen() {
       <Text style={styles.header}>O MENI</Text>
 
       <Text style={styles.sectionTitle}>Osebni podatki</Text>
-      
+      <Image style={styles.phoneImage} source={require('../../assets/images/photoes/photo_2026-10-12_22-04-12.jpg')} />
       <View style={styles.statsContainer}>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>STAROST</Text>
