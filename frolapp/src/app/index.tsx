@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontFamily: 'BebasNeue_400Regular',
-    color: "#ffffff", // Белый текст для темной темы
+    color: "#ffffff",
     fontSize: 36,
     marginBottom: 5,
   }, 

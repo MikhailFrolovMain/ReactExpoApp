@@ -13,7 +13,6 @@ export default function ExploreScreen() {
         showsHorizontalScrollIndicator={false} 
         style={styles.galleryContainer}
       >
-        {/* Добавлены правильные относительные пути ../../ */}
         <Image style={styles.galleryImage} source={require('../../assets/images/photo_2026-10-05_23-59-50.jpg')} />
         <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-27.jpg')} />
         <Image style={styles.galleryImage} source={require('../../assets/images/photoes/photo_2026-10-12_21-52-40.jpg')} />
@@ -27,12 +26,13 @@ export default function ExploreScreen() {
       <Text style={styles.sectionTitle}>MOJE ORODJE</Text>
       <View style={styles.phoneBlock}>
         <View style={styles.phoneImagePlaceholder}>
-           {/* Применен новый стиль phoneImage, чтобы картинка вписалась в контейнер */}
            <Image style={styles.phoneImage} source={require('../../assets/images/photoes/image.png')} />
         </View>
         <Text style={styles.phoneTitle}>NOTHING PHONE 2a</Text>
         <Text style={styles.phoneDesc}>
-          Uporabljam Nothing Phone 2a. Njegova kamera ima edinstven dizajn z dvema lečama, ki sta postavljeni vodoravno na sredini zadnje strani. To daje telefonu prepoznaven "oči" videz, popolnoma v skladu z mojim stilom.
+          Uporabljam Nothing Phone (2a). Zadnji modul s kamero meni zgleda kot oči minjona: 
+          {'\n\n'}• Glavna kamera: 50 MP (zaslonka f/1.88) z optično stabilizacijo (OIS).
+          {'\n'}• Ultraširoka kamera: 50 MP (zaslonka f/2.2) s 114-stopinjskim kotom zajema.
         </Text>
       </View>
     </ScrollView>
@@ -86,18 +86,18 @@ const styles = StyleSheet.create({
   },
   phoneImagePlaceholder: {
     width: '100%',
-    height: 200, // Высота блока под телефон
+    height: 200, 
     backgroundColor: '#2a2a2a',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 15,
-    overflow: 'hidden', // Чтобы картинка не вылезала за скругленные края
+    overflow: 'hidden', 
   },
   phoneImage: {
     width: '100%',
     height: '100%',
-    resizeMode: 'cover', // Картинка красиво заполнит блок, не растягиваясь
+    resizeMode: 'cover', 
   },
   phoneTitle: {
     fontFamily: 'BebasNeue_400Regular',

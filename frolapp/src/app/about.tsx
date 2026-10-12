@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#fefefe',
     paddingBottom: 5,
   },
-  // Добавлен стиль для твоей фотографии
+ 
   profileImage: {
     width: '100%',
     height: 250,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#fdfdfd',
     marginBottom: 20,
-    resizeMode: 'cover', // Чтобы фото красиво заполнило рамку
+    resizeMode: 'cover',
   },
   statsContainer: {
     flexDirection: 'row',
