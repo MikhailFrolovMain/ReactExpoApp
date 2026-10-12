@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginBottom: 10,
     borderWidth: 2,
-    borderColor: '#446d16',
+    borderColor: '#fbfbfb',
   }, 
   text: {
     fontFamily: 'BebasNeue_400Regular',

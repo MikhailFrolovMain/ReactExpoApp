@@ -13,16 +13,20 @@ export default function ExploreScreen() {
         showsHorizontalScrollIndicator={false} 
         style={styles.galleryContainer}
       >
-        {/* Замени на свои фотки */}
         <Image style={styles.galleryImage} source={require('../../assets/images/photo_2026-10-05_23-59-50.jpg')} />
-        <View style={styles.galleryPlaceholder}><Text style={styles.placeholderText}>FOTKA 2</Text></View>
-        <View style={styles.galleryPlaceholder}><Text style={styles.placeholderText}>FOTKA 3</Text></View>
+        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-27.jpg')} />
+        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-40.jpg')} />
+        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-42.jpg')} />
+        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-43.jpg')} />
+        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-45.jpg')} />
+        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-46.jpg')} />
+        <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-48.jpg')} />
       </ScrollView>
 
       <Text style={styles.sectionTitle}>MOJE ORODJE</Text>
       <View style={styles.phoneBlock}>
         <View style={styles.phoneImagePlaceholder}>
-           <Text style={styles.placeholderText}>Slika Nothing Phone 2a</Text>
+           <Image style={styles.galleryImage} source={require('assets/images/photoes/photo_2026-10-12_21-52-48.jpg')} />
         </View>
         <Text style={styles.phoneTitle}>NOTHING PHONE 2a</Text>
         <Text style={styles.phoneDesc}>
@@ -51,12 +55,12 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontFamily: 'BebasNeue_400Regular',
-    color: '#446d16', 
+    color: '#fbfbfb', 
     fontSize: 28,
     marginTop: 10,
     marginBottom: 15,
     borderBottomWidth: 2,
-    borderBottomColor: '#446d16',
+    borderBottomColor: '#ffffff',
     paddingBottom: 5,
   },
   galleryContainer: {
@@ -69,23 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginRight: 15,
     borderWidth: 2,
-    borderColor: '#446d16',
-  },
-  galleryPlaceholder: {
-    width: width * 0.75,
-    height: 350,
-    backgroundColor: '#1e1e1e',
-    borderRadius: 15,
-    marginRight: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 2,
-    borderColor: '#333',
-  },
-  placeholderText: {
-    fontFamily: 'BebasNeue_400Regular',
-    color: '#666',
-    fontSize: 24,
+    borderColor: '#fcfcfc',
   },
   phoneBlock: {
     backgroundColor: '#1e1e1e',

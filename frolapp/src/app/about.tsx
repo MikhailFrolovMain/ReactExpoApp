@@ -10,15 +10,15 @@ export default function AboutScreen() {
       <View style={styles.statsContainer}>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>STAROST</Text>
-          <Text style={styles.statValue}>18</Text> {/* Впиши свой */}
+          <Text style={styles.statValue}>16</Text> 
         </View>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>VIŠINA</Text>
-          <Text style={styles.statValue}>185 cm</Text> {/* Впиши свой */}
+          <Text style={styles.statValue}>193 cm</Text> 
         </View>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>TEŽA</Text>
-          <Text style={styles.statValue}>75 kg</Text> {/* Впиши свой */}
+          <Text style={styles.statValue}>82.5 kg</Text>
         </View>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>STATUS</Text>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#121212',
     padding: 20,
-    justifyContent: 'center', // Центрируем контент по вертикали
+    justifyContent: 'center',
   },
   header: {
     fontFamily: 'BebasNeue_400Regular',
