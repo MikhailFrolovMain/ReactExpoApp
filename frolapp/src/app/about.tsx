@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native'; // Добавлен импорт Image
 
 export default function AboutScreen() {
   return (
@@ -6,7 +6,10 @@ export default function AboutScreen() {
       <Text style={styles.header}>O MENI</Text>
 
       <Text style={styles.sectionTitle}>Osebni podatki</Text>
-      <Image style={styles.phoneImage} source={require('../../assets/images/photoes/photo_2026-10-12_22-04-12.jpg')} />
+      
+      {/* Твоя фотография */}
+      <Image style={styles.profileImage} source={require('../../assets/images/photoes/photo_2026-10-12_22-04-12.jpg')} />
+      
       <View style={styles.statsContainer}>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>STAROST</Text>
@@ -50,6 +53,16 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: '#fefefe',
     paddingBottom: 5,
+  },
+  // Добавлен стиль для твоей фотографии
+  profileImage: {
+    width: '100%',
+    height: 250,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: '#fdfdfd',
+    marginBottom: 20,
+    resizeMode: 'cover', // Чтобы фото красиво заполнило рамку
   },
   statsContainer: {
     flexDirection: 'row',
