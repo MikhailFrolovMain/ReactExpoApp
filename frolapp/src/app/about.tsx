@@ -6,8 +6,7 @@ export default function AboutScreen() {
       <Text style={styles.header}>O MENI</Text>
 
       <Text style={styles.sectionTitle}>Osebni podatki</Text>
-      
-      {/* Твоя фотография */}
+
       <Image style={styles.profileImage} source={require('../../assets/images/photoes/photo_2026-10-12_22-04-12.jpg')} />
       
       <View style={styles.statsContainer}>
@@ -17,11 +16,11 @@ export default function AboutScreen() {
         </View>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>VIŠINA</Text>
-          <Text style={styles.statValue}>193 cm</Text> 
+          <Text style={styles.statValue}>194 cm</Text> 
         </View>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>TEŽA</Text>
-          <Text style={styles.statValue}>82.5 kg</Text>
+          <Text style={styles.statValue}>86 kg</Text>
         </View>
         <View style={styles.statItem}>
           <Text style={styles.statLabel}>STATUS</Text>
